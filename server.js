@@ -41,6 +41,7 @@ app.get('/api/timestamp/:date_string?', (req, res, next) => {
     // This is the case where date_string is undefined
     // This will show the current date from the server
     req.time = new Date().toUTCString();
+    req.unix = new Date().getTime();
   }
   next();
 }, (req, res) => {
